@@ -1,0 +1,137 @@
+*,
+html{
+    margin: 0;
+    padding: 0;
+}
+@media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+    }
+    .judulprojek,
+    .desc {
+      margin-left: 0;
+    }
+  }
+  
+.navbar-brand{
+    width: 35px;
+    height: 40px;
+}
+.nav-link{
+    font-family: "Martian Mono", monospace;;
+    font-optical-sizing: auto;
+    color: #4e4e4e;
+}
+.nav-link:hover {
+    font-family: "Martian Mono", monospace;
+    font-optical-sizing: auto;
+    background-color: #4e4e4e;
+    color: #fff; /* biar kontras */
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+  
+
+.judul {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    margin-left: 70px;
+    text-align: left;
+    max-width: 933px; /* fleksibel */
+    color: #7A6F5F;
+    margin-top: 100px;
+    font-size: 64px;
+    line-height: 1.2; /* biar rapi */
+  }
+  
+.judulprojek {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    margin-left: auto;
+    text-align: left;
+    width: 466px;
+    height: auto;
+    color: #7A6F5F;
+    margin-top: 100px;
+    font-size: 39px;
+    text-decoration: none; /* hilangin underline default link */
+    position: relative;   /* penting */
+    display: inline-block; /* penting */
+}
+
+.judulprojek::after {
+    content: "";
+    position: absolute;
+    left: 0;          /* mulai dari kiri */
+    bottom: -5px; 
+    width: 50%;       /* awalnya setengah */
+    height: 1.5px;
+    background-color: #4e4e4e;
+    transition: width 0.3s ease;
+}
+
+  
+.judulprojek:hover::after {
+    width: 100%;
+}
+.desc{
+    font-family: "IBM Plex Sans", sans-serif;
+  color: #4e4e4e;
+  width: 467px;
+  font-size: 24px;
+  margin-left: auto;
+  padding-top: 10px;
+  text-align: justify;
+
+}
+.container {
+    display: flex;           /* biar teks & gambar sejajar */
+    align-items: center;     /* tengah secara vertikal */
+    justify-content: space-between;
+    gap: 40px;               /* jarak antar kolom */
+    padding: 40px;
+  }
+.image {
+    margin-top: 50px;
+    flex: 1;                 /* biar ambil separuh */
+    text-align: center;
+}
+  
+.image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+}
+
+body {
+  margin: 0;
+  min-height: 200vh; /* biar bisa discroll panjang */
+  position: relative;
+  overflow-x: hidden;
+
+  /* background utama jadi gradasi panjang ke bawah */
+  background: linear-gradient(
+    to bottom,
+    #b5ead7 50%,
+    #fcd5ce 75%,
+    #D8CFF5 100%
+  );
+  background-attachment: fixed; /* bikin efek warna ikut scroll */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* ellipse blur tetap ada */
+  background: 
+    radial-gradient(circle at 20% 40%, #fcd5ce 0%, transparent 60%),
+    radial-gradient(circle at 80% 40%, #b5ead7 0%, transparent 60%);
+  filter: blur(120px);
+  z-index: -1;
+}
